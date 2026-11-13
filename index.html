@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRINCE-DU-LOVE ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  text-align: center;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.heart {
+  font-size: 70px;
+  animation: beat 1s infinite;
+}
+
+p {
+  font-size: 20px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+button {
+  margin-top: 25px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #e84373;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#message {
+  display: none;
+  margin-top: 25px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+  </style>
+</head><body>
+  <div class="container">
+    <div class="heart">❤️</div><h1>Bienvenue sur PRINCE-DU-LOVE</h1>
+
+<p>
+  L'amour est une belle aventure, remplie de sourires,
+  de rêves et de moments inoubliables. 💕
+</p>
+
+<button onclick="showLove()">Clique ici ❤️</button>
+
+<div id="message">
+  ❤️ Tu es une personne très spéciale. Que l'amour illumine toujours ton cœur ! ❤️
+</div>
+
+  </div>  <script>
+    function showLove() {
+      document.getElementById("message").style.display = "block";
+    }
+  </script></body>
+  </html>
