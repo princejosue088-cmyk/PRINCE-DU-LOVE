@@ -84,5 +84,18 @@
     function showLove() {
       document.getElementById("message").style.display = "block";
     }
-  </script></body>
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://rpseseetttsdyvomamrx.supabase.co";
+const SUPABASE_KEY = "sb_publishable_Axy2TsuWpiXXwxkdBBSiGQ_eDbOHEHE";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+console.log("PRINCE-DU-LOVE connecté à Supabase !");
+</script></body>
 </html>
