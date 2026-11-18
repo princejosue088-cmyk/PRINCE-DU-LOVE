@@ -79,7 +79,35 @@
 <p id="message" style="display:none;">
   💖 Tu es une personne spéciale. Que l'amour illumine toujours ton cœur ! 💖
 </p>
+<section id="inscription">
+  <h2>Créer mon compte ❤️</h2>
 
+  <form id="signupForm">
+
+    <label>Prénom :</label>
+    <input type="text" id="prenom" placeholder="Ton prénom" required>
+
+    <label>Pays :</label>
+    <input type="text" id="pays" placeholder="Ton pays" required>
+
+    <label>Date de naissance :</label>
+    <input type="date" id="naissance" required>
+
+    <label>Adresse e-mail :</label>
+    <input type="email" id="email" placeholder="Ton e-mail" required>
+
+    <label>Mot de passe :</label>
+    <input type="password" id="password" placeholder="Créer un mot de passe" required minlength="8">
+
+    <label>
+      <input type="checkbox" id="majeur" required>
+      Je confirme avoir au moins 18 ans.
+    </label>
+
+    <button type="submit">Créer mon compte</button>
+
+  </form>
+</section>
   </main>  <script>
 function showLove() {
     document.getElementById("message").style.display = "block";
