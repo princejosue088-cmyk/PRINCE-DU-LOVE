@@ -125,5 +125,47 @@ const supabaseClient = window.supabase.createClient(
 );
 
 console.log("PRINCE-DU-LOVE connecté à Supabase !");
+  document.getElementById("signupForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const prenom = document.getElementById("prenom").value;
+    const pays = document.getElementById("pays").value;
+    const naissance = document.getElementById("naissance").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const majeur = document.getElementById("majeur").checked;
+
+    const dateNaissance = new Date(naissance + "T00:00:00");
+    const aujourdHui = new Date();
+
+    let age = aujourdHui.getFullYear() - dateNaissance.getFullYear();
+    const mois = aujourdHui.getMonth() - dateNaissance.getMonth();
+
+    if (mois < 0 || (mois === 0 && aujourdHui.getDate() < dateNaissance.getDate())) {
+        age--;
+    }
+
+    if (age < 18 || !majeur) {
+        alert("Inscription réservée aux personnes de 18 ans et plus.");
+        return;
+    }
+
+    const { data, error } = await supabaseClient.auth.signUp({
+        email: email,
+        password: password,
+        options: {
+            data: {
+                prenom: prenom,
+                pays: pays
+            }
+        }
+    });
+
+    if (error) {
+        alert("Erreur : " + error.message);
+    } else {
+        alert("Inscription envoyée ! Vérifie ta boîte e-mail.");
+    }
+});
 </script></body>
 </html>
