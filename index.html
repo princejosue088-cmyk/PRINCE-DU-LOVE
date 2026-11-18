@@ -151,17 +151,16 @@ console.log("PRINCE-DU-LOVE connecté à Supabase !");
     }
 
     const { data, error } = await supabaseClient.auth.signUp({
-        email: email,
-        password: password,
-        options: {
-            data: {
-    prenom: prenom,
-    pays: pays,
-    date_naissance: naissance
-}
-            }
+    email: email,
+    password: password,
+    options: {
+        data: {
+            prenom: prenom,
+            pays: pays,
+            date_naissance: naissance
         }
-    });
+    }
+});
 
     if (error) {
         alert("Erreur : " + error.message);
